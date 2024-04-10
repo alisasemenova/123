@@ -1,6 +1,13 @@
 #include <iostream>
 #include <iostream>
 #include <cmath>
+/**
+ * @brief Функция для перевода числа в другую сс
+ * 
+ * @param number принимает число для перевода
+ * @param base - система, счисления в которую переводим
+ * @return std::string - возвращает 
+ */
 
 std::string SwapBases(int number, int base) {
     std::string code = "0123456789ABCDEF";
@@ -13,20 +20,41 @@ std::string SwapBases(int number, int base) {
     for (int i = sum.length() - 1; i >= 0; i--) result += sum[i];
     return result;
 }
-// Функция для конвертации числа N из десятичной системы в p-ичную (по значению)
+/**
+ * @brief Функция для конвертации числа N из десятичной системы в p-ичную (по значению)
+ * 
+ * @param N - число для перевода
+ * @param p - основание системы
+ * @return std::string - возвращает число в новой сс в формате строки
+ */
+
 std::string convertByValue(int N, int p) {
     std::string result = "";
     result = SwapBases(N, p) + result; 
     return result; 
 }
 
-// Функция для конвертации числа N из десятичной системы в p-ичную (по ссылке)
+/**
+ * @brief Функция для конвертации числа N из десятичной системы в p-ичную (по ссылке)
+ * 
+ * @param N - число для перевода
+ * @param p - основание системы
+ * @param result - результирующее число в формате строки
+ */
+ 
 void convertByReference(int N, int p, std::string& result) {
     result = ""; 
     result = SwapBases(N, p) + result;
 }
 
-// Функция для конвертации числа N из десятичной системы в p-ичную (через указатель)
+/**
+ * @brief Функция для конвертации числа N из десятичной системы в p-ичную (через указатель) 
+ * 
+ * @param N - число для перевода
+ * @param p - новое основание
+ * @param result - строка, в которой хранится число в новой сс
+ */
+ 
 void convertByPointer(int N, int p, std::string* result) {
     *result = ""; 
     *result = SwapBases(N, p) + *result; 
